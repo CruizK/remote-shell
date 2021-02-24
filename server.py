@@ -21,7 +21,7 @@ def on_client_conn(conn):
                 conn.sendall(b'command complete\n')
         
         except subprocess.CalledProcessError as e:
-            conn.sendall(str(e).encode())
+            conn.sendall(e.output)
 
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
