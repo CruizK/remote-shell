@@ -18,13 +18,10 @@ def on_client_conn(conn):
             if output:
                 conn.sendall(output)
             else:
-                conn.sendall(b'command complete')
+                conn.sendall(b'command complete\n')
         
         except subprocess.CalledProcessError as e:
             conn.sendall(str(e).encode())
-
-        # print("this is what returned: " + str(output))
-
 
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
