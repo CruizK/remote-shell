@@ -15,7 +15,6 @@ def on_client_conn(conn):
 
         try:
             output = subprocess.check_output(data, shell=True, stderr=subprocess.STDOUT)
-
             if output:
                 conn.sendall(output)
             else:
