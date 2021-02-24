@@ -1,8 +1,8 @@
 # import os
 import socket
 
-HOST = '127.0.01'
-PORT = 2005
+HOST = '157.230.52.239'
+PORT = 4040
 
 print("enter 'exit' to disconnect")
 user_in = input('$>')

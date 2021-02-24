@@ -3,8 +3,8 @@ import socket
 import subprocess
 import threading
 
-HOST = '127.0.0.1'
-PORT = 2005
+HOST = '0.0.0.0'
+PORT = 4040
 
 def on_client_conn(conn):
     print('connected by', addr)
