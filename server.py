@@ -4,7 +4,8 @@ import subprocess
 import threading
 
 HOST = '0.0.0.0'
-PORT = 4040
+# PORT = 4040
+PORT = 2005
 
 def on_client_conn(conn):
     print('connected by', addr)
